@@ -177,6 +177,30 @@ post_page_rules:
         updated:
           [{ selector: "article time[itemprop='dateModified']", attr: "text" }],
       },
+    # Astro Pure Theme - yxk-blog
+    astro_pure:
+      {
+        title:
+          [
+            { selector: "a.group h2", attr: "text" },
+            { selector: "ul li a h2", attr: "text" },
+          ],
+        link:
+          [
+            { selector: "a.group", attr: "href" },
+            { selector: "ul li a", attr: "href" },
+          ],
+        created:
+          [
+            { selector: "a.group time.post-date", attr: "text" },
+            { selector: "a.group time.post-date", attr: "datetime" },
+          ],
+        updated:
+          [
+            { selector: "a.group time.post-updated", attr: "text" },
+            { selector: "a.group time.post-updated", attr: "datetime" },
+          ],
+      },
   }
 
 # 友链页规则
@@ -288,5 +312,25 @@ link_page_rules:
         author: [{ selector: ".cf-friends-name", attr: "text" }],
         link: [{ selector: "a.cf-friends-link", attr: "href" }],
         avatar: [{ selector: ".cf-friends-avatar", attr: "src" }],
+      },
+    # Astro Pure Theme - yxk-blog /friends page
+    astro_pure:
+      {
+        author:
+          [
+            { selector: ".friend-item", attr: "data-name" },
+            { selector: ".friend-name", attr: "text" },
+            { selector: ".friend-avatar", attr: "alt" },
+          ],
+        link:
+          [
+            { selector: ".friend-link", attr: "href" },
+            { selector: ".friend-item a", attr: "href" },
+          ],
+        avatar:
+          [
+            { selector: ".friend-avatar", attr: "src" },
+            { selector: ".friend-item img", attr: "src" },
+          ],
       },
   }
